@@ -1,0 +1,20 @@
+<h2>Search Pictures</h2>
+
+
+<%= form_with(url: root_path, method: "get", local: true) do %>
+  <%= label_tag(:user_id, "User:") %>
+  <%= text_field_tag(:user_id) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+<% if !@photos.nil? %>
+<h2>Photos</h2>
+
+<% @url.each do |url| %>
+<%= image_tag(url) %>
+
+
+<% end %>
+
+<% end %>
